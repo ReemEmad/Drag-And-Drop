@@ -4,15 +4,17 @@ let div12 = document.getElementById("div12");
 initGrid();
 function initGrid() {
   let divs = document.querySelectorAll(".grid div");
-  if (localStorage.key("srcs")) {
-    let srcs = localStorage.getItem("srcs");
-    srcs = JSON.parse(srcs).srcs
+  if (localStorage.key("imgs")) {
+    let imgs = localStorage.getItem("imgs");
+    imgs = JSON.parse(imgs).imgs
     divs.forEach((div, i) => {
-      if (srcs[i] !== "") {
+      if (imgs[i].src !== "") {
         let img = document.createElement("img")
         img.setAttribute("draggable","true")
-        img.setAttribute("src", "data:image/png;base64," + srcs[i])
+        img.setAttribute("src", "data:image/png;base64," + imgs[i].src)
         img.setAttribute("id",`${i}`)
+        img.setAttribute("width",`${imgs[i].width}`)
+        img.setAttribute("height",`${imgs[i].height}`)
         img.addEventListener("dragstart",drag)
         div.appendChild(img)
       }
@@ -44,7 +46,6 @@ function getBase64Image(img) {
   ctx.drawImage(img, 0, 0);
   var width = img.width;
   var height = img.height;
-  console.log(width,height)
   // if (width > height) {
   //   if (width > MAX_WIDTH) {
   //     height *= MAX_WIDTH / width;
@@ -56,33 +57,31 @@ function getBase64Image(img) {
   //     height = MAX_HEIGHT;
   //   }
   // }
-  canvas.width = width;
-  canvas.height = height;
-
+  canvas.width = img.width;
+  canvas.height = img.height;
+  console.log(canvas.width,canvas.height)
   ctx.drawImage(img, 0, 0, width, height);
-
   var dataURL = canvas.toDataURL("image/png");
-  return dataURL.substr(dataURL.indexOf(",") + 1)
+  return {src: dataURL.substr(dataURL.indexOf(",") + 1),width:img.width,height:img.height}
 }
 
 function saveLayout() {
-  let srcs = [];
+  let imgs = [];
   let divs = document.querySelectorAll(".grid div");
 
   divs.forEach((div) => {
     //Check if Image Exists
     if (div.childNodes.length == 2) {
       let img = div.childNodes[1]
-      console.log(img.width,img.height)
-      srcs.push(getBase64Image(img))
+      imgs.push(getBase64Image(img))
     }
     else {
-      srcs.push("");
+      imgs.push({src:"",width:0,height:0});
     }
   })
   let obj = {
-    srcs: srcs
+    imgs: imgs
   }
-  console.log(srcs)
-  localStorage.setItem("srcs", JSON.stringify(obj));
+  console.log(imgs)
+  localStorage.setItem("imgs", JSON.stringify(obj));
 }
