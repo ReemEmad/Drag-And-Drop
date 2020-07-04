@@ -22,6 +22,8 @@ div {
   height: 200px;
   border: 1px solid black;
   /* padding: 10px; */
+  /* resize: both;
+  overflow: hidden; */
 }
 .grid {
   display: flex;
@@ -38,4 +40,6 @@ div {
 img {
   width: 200px;
   height: 200px;
+  resize: both;
+  overflow: hidden;
 }
