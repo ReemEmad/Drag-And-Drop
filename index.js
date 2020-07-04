@@ -1,6 +1,5 @@
 let div11 = document.getElementById("div11");
 let div12 = document.getElementById("div12");
-let div13 = document.getElementById("div13");
 
 let div21 = document.getElementById("div21");
 let div22 = document.getElementById("div22");
@@ -14,25 +13,31 @@ let body = document.body;
 initGrid();
 function initGrid() {
   //   for (let i = 1; i <= 3; i++) {
-  //     // if (localStorage.div21) console.log(localStorage.getItem(`div2${i}`));
-  //     // // x += `${localStorage.getItem("div21")}`;
+  if (localStorage.imgData && localStorage.imgData1) {
+    // document.getElementById(`div1${i}`).innerHTML = "";
 
-  //     document.getElementById(`div2${i}`).innerHTML = "";
-  //   }
-  var dataImage = localStorage.getItem("imgData");
-  document.getElementById("tableBanner").src =
-    "data:image/png;base64," + dataImage;
+    //   }
+    var dataImage = localStorage.getItem("imgData");
+    document.getElementById("tableBanner").src =
+      "data:image/png;base64," + dataImage;
 
-  var dataImage1 = localStorage.getItem("imgData1");
-  document.getElementById("tableBanner1").src = document.getElementById(
-    "tableBanner1"
-  ).src
-    ? "data:image/png;base64," + dataImage1
-    : "";
+    var dataImage1 = localStorage.getItem("imgData1");
+    document.getElementById("tableBanner1").src =
+      "data:image/png;base64," + dataImage1;
+  } else if (
+    document.getElementById("tableBanner").src ==
+    "http://127.0.0.1:5500/home.html"
+  ) {
+    document.getElementById("tableBanner").src = "";
+  } else {
+    document.getElementById("tableBanner1").src = "";
+  }
 }
+
 function drag(ev) {
   ev.dataTransfer.setData("text", ev.target.id);
 }
+
 function allowDrop(ev) {
   ev.preventDefault();
 }
