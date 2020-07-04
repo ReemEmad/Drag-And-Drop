@@ -6,24 +6,22 @@ function initGrid() {
   let divs = document.querySelectorAll(".grid div");
   if (localStorage.key("srcs")) {
     let srcs = localStorage.getItem("srcs");
-    srcs = JSON.parse(srcs).srcs
+    srcs = JSON.parse(srcs).srcs;
     divs.forEach((div, i) => {
       if (srcs[i] !== "") {
-        let img = document.createElement("img")
-        img.setAttribute("draggable","true")
-        img.setAttribute("src", "data:image/png;base64," + srcs[i])
-        img.setAttribute("id",`${i}`)
-        img.addEventListener("dragstart",drag)
-        div.appendChild(img)
+        let img = document.createElement("img");
+        img.setAttribute("draggable", "true");
+        img.setAttribute("src", "data:image/png;base64," + srcs[i]);
+        img.setAttribute("id", `${i}`);
+        img.addEventListener("dragstart", drag);
+        div.appendChild(img);
       }
-    })
+    });
   }
-  
-
 }
 
 function drag(ev) {
-  console.log(ev)
+  console.log(ev);
   ev.dataTransfer.setData("text", ev.target.id);
 }
 
@@ -44,7 +42,7 @@ function getBase64Image(img) {
   ctx.drawImage(img, 0, 0);
   var width = img.width;
   var height = img.height;
-  console.log(width,height)
+  console.log(width, height);
   // if (width > height) {
   //   if (width > MAX_WIDTH) {
   //     height *= MAX_WIDTH / width;
@@ -62,7 +60,7 @@ function getBase64Image(img) {
   ctx.drawImage(img, 0, 0, width, height);
 
   var dataURL = canvas.toDataURL("image/png");
-  return dataURL.substr(dataURL.indexOf(",") + 1)
+  return dataURL.substr(dataURL.indexOf(",") + 1);
 }
 
 function saveLayout() {
@@ -72,17 +70,15 @@ function saveLayout() {
   divs.forEach((div) => {
     //Check if Image Exists
     if (div.childNodes.length == 2) {
-      let img = div.childNodes[1]
-      console.log(img.width,img.height)
-      srcs.push(getBase64Image(img))
-    }
-    else {
+      let img = div.childNodes[1];
+      srcs.push(getBase64Image(img));
+    } else {
       srcs.push("");
     }
-  })
+  });
   let obj = {
-    srcs: srcs
-  }
-  console.log(srcs)
+    srcs: srcs,
+  };
+
   localStorage.setItem("srcs", JSON.stringify(obj));
 }

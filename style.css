@@ -3,45 +3,124 @@
   margin: 0;
   padding: 0;
 }
+html,
+body {
+  height: 100vh;
+}
 .container {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
 }
-#p1 {
-  resize: both;
-  overflow: hidden;
-}
-/* #div11,#div12 {
-  width: 200px;
-  height: 200px;
-  border: 1px solid black;
-  padding: 10px;
-} */
 div {
-  min-width: 200px;
-  min-height: 200px;
+  min-width: 225px;
+  min-height: 145px;
   border: 1px solid black;
   /* padding: 10px; */
-  resize: both;
-  overflow: hidden;
 }
-.grid {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-}
+
 .draggable {
   display: flex;
   justify-content: space-evenly;
   align-items: flex-start;
   flex-direction: column;
+  background-color: bisque;
+  height: 100vh;
+  padding: 15px;
+  flex-basis: 17%;
+  color: rgb(182, 59, 59);
 }
+.draggable p {
+  border: 1px dashed black;
+  padding: 10px 15px;
+  border-radius: 2px;
+  font-size: 20px;
+  width: 225px;
+}
+span {
+  font-weight: bolder;
+  font-size: 20px;
+  color: black;
+}
+.draggable p,
+.draggable span {
+  text-align: center;
+}
+.grid {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  /* flex-basis: auto; */
+  align-items: center;
+  background-color: #f0f0f0;
+  width: 100vw;
+  height: 100vh;
+  flex-wrap: wrap;
+  flex-basis: 83%;
+  /* padding-left: 50px; */
+}
+
+.grid div {
+  resize: both;
+  overflow: hidden;
+  background-image: url("./add.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 10px;
+}
+
 img {
-  width: 200px;
-  height: 200px;
+  width: 225px;
+  height: 145px;
 }
 .grid img {
   width: 100%;
   height: 100%;
+  margin: 0 20px 0;
+}
+
+.nav {
+  padding: 1.5em;
+  background-color: rgb(59, 59, 59);
+  color: aliceblue;
+  width: 100%;
+  height: 5vh;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+/* h1{
+  display: flex
+} */
+.nav-ul {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  padding: 0.5em;
+}
+li:last-of-type {
+  padding-right: 0;
+}
+
+#pp {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+button {
+  color: aliceblue;
+  border-radius: 3px;
+  background-color: rgb(89, 167, 89);
+  padding: 10px;
+  border: none;
+  align-self: flex-end;
+  display: flex;
+  margin: 0 0 20px 60%;
 }
