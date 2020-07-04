@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dnd</title>
+    <link rel="stylesheet" href="style.css"></link>
+  </head>
+
+  <body>
+    <article class="container" id="myGrid">
+    <section class="draggable">
+    <div
+     
+      id="div11"
+      ondragstart="drag(event)"
+      ondrop="drop(event)"
+      ondragover="allowDrop(event)"
+    ><img src="admin-4_png by Drew Christiano.png"  draggable="true"  ondragstart="drag(event)" id="p1"></img></div>
+    <div
+      id="div12"
+      ondrop="drop(event)"
+      ondragover="allowDrop(event)"
+  
+    ><img src="Pink and Gold Artistic Fashion Influencer Facebook Cover.png" draggable="true"  ondragstart="drag(event)" id="p2"/></div>
+  </section>
+
+    <section class="grid">
+      
+      <div id="div21" ondragover="allowDrop(event)" ondrop="drop(event)">
+        <img src="" id="tableBanner" />
+      </div>
+    <div id="div22" ondragover="allowDrop(event)" ondrop="drop(event)">
+      <img src="" id="tableBanner1" />
+    </div>
+    <div id="div23" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
+  </section>
+  
+</article>
+<button onclick="saveLayout()">finish</button>
+    <script src="index.js"></script>
+  </body>
+</html>

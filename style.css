@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: flex;
+  justify-content: space-evenly;
+}
+#p1 {
+  resize: both;
+  overflow: hidden;
+}
+/* #div11,#div12 {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  padding: 10px;
+} */
+div {
+  width: 200px;
+  height: 200px;
+  border: 1px solid black;
+  padding: 10px;
+}
+.grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.draggable {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  flex-direction: column;
+}
+img {
+  width: 200px;
+  height: 200px;
+}
