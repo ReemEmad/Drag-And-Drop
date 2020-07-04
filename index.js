@@ -21,7 +21,7 @@ function initGrid() {
 }
 
 function drag(ev) {
-  console.log(ev);
+  // console.log(ev);
   ev.dataTransfer.setData("text", ev.target.id);
 }
 
@@ -42,7 +42,7 @@ function getBase64Image(img) {
   ctx.drawImage(img, 0, 0);
   var width = img.width;
   var height = img.height;
-  console.log(width, height);
+  // console.log(width, height);
   // if (width > height) {
   //   if (width > MAX_WIDTH) {
   //     height *= MAX_WIDTH / width;
@@ -69,8 +69,9 @@ function saveLayout() {
 
   divs.forEach((div) => {
     //Check if Image Exists
-    if (div.childNodes.length == 2) {
-      let img = div.childNodes[1];
+    console.log(div.childNodes);
+    if (div.childNodes.length == 1) {
+      let img = div.childNodes[0];
       srcs.push(getBase64Image(img));
     } else {
       srcs.push("");
