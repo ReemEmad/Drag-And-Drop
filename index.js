@@ -21,7 +21,7 @@ function initGrid() {
 }
 
 function drag(ev) {
-  // console.log(ev);
+  console.log(ev);
   ev.dataTransfer.setData("text", ev.target.id);
 }
 
@@ -30,10 +30,17 @@ function allowDrop(ev) {
 }
 
 function drop(ev) {
+  ev.target.style.backgroundColor = "white";
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text");
   ev.target.appendChild(document.getElementById(data));
-  ev.dataTransfer.clearData();
+  // ev.dataTransfer.clearData();
+}
+function colorize(ev) {
+  ev.target.style.backgroundColor = "#81ecec";
+}
+function decolorize(ev) {
+  ev.target.style.backgroundColor = "white";
 }
 
 function getBase64Image(img) {

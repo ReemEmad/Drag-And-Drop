@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
- 
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Drag And Drop</title>
-    <link rel="stylesheet" href="style.css"></link>
-  </head>
 
-  <body>
-    <header>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Drag And Drop</title>
+<link rel="stylesheet" href="style.css">
+</link>
+</head>
+
+<body>
+  <header>
     <nav class="nav">
       <h1>Dashbang</h1>
       <ul class="nav-ul">
@@ -18,50 +19,52 @@
         <li>
           <h5>Taylor Swift</h5>
         </li>
-        </ul>
-        </nav>
-      </header>    
-    <article class="container" id="myGrid">
+      </ul>
+    </nav>
+  </header>
+
+  <article class="container">
 
     <section class="draggable">
-     <p> <span>+</span> New Widget</p>
-      <div
-        id="div11"
-        ondragstart="drag(event)"
-        ondrop="drop(event)"
-        ondragover="allowDrop(event)"
-      ><img src="admin-4_png by Drew Christiano.png"  draggable="true"  ondragstart="drag(event)" id="p1"></img></div>
-      <div
-        id="div12"
-        ondrop="drop(event)"
-        ondragover="allowDrop(event)"
-    
-      ><img src="Pink and Gold Artistic Fashion Influencer Facebook Cover.png" draggable="true"  ondragstart="drag(event)" id="p2"/></div>
-      <div
-        id="div13"
-        ondrop="drop(event)"
-        ondragover="allowDrop(event)"
-    
-      ><img src="65390313_487231922044812_214369617403969536_n-640x559-1.jpg" draggable="true"  ondragstart="drag(event)" id="p3"/></div>
-   
-  
-      </section>
+      <div class="draggable__btn">
+        <p id="plus">+</p>
+        <p> New Widget</p>
+      </div>
+      <div id="div11" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"><img src="chart1.jpg"
+          draggable="true" ondragstart="drag(event)" id="p1"></img></div>
+      <div id="div12" ondrop="drop(event)" ondragover="allowDrop(event)"><img src="chart2.png" draggable="true"
+          ondragstart="drag(event)" id="p2" /></div>
+      <div id="div13" ondrop="drop(event)" ondragover="allowDrop(event)"><img src="chart3.png" draggable="true"
+          ondragstart="drag(event)" id="p3" /></div>
+
+
+    </section>
 
     <section class="grid">
       
-    <div id="div21" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
-    <div id="div22" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
-    <div id="div23" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
-    <div id="div23" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
-    <div id="div23" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
-    <div id="div23" ondragover="allowDrop(event)" ondrop="drop(event)"></div>
+      <div id="div21" ondragover="allowDrop(event)" ondrop="drop(event)" ondragenter="colorize(event)"
+        ondragleave="decolorize(event)"></div>
+      <div id="div22" ondragover="allowDrop(event)" ondrop="drop(event)" ondragenter="colorize(event)"
+      ondragleave="decolorize(event)"></div>
+      <div id="div23" ondragover="allowDrop(event)" ondrop="drop(event)" ondragenter="colorize(event)"
+      ondragleave="decolorize(event)"></div>
+      <div id="div24" ondragover="allowDrop(event)" ondrop="drop(event)" ondragenter="colorize(event)"
+      ondragleave="decolorize(event)"></div>
+      <div id="div233" ondragover="allowDrop(event)" ondrop="drop(event)" ondragenter="colorize(event)"
+      ondragleave="decolorize(event)"></div>
+      <div id="div244" ondragover="allowDrop(event)" ondrop="drop(event)" ondragenter="colorize(event)"
+      ondragleave="decolorize(event)"></div>
+      <div id="div25" ondragover="allowDrop(event)" ondrop="drop(event)" ondragenter="colorize(event)"
+      ondragleave="decolorize(event)"></div>
+      <div id="div26" ondragover="allowDrop(event)" ondrop="drop(event)" ondragenter="colorize(event)"
+      ondragleave="decolorize(event)"></div>
 
-      <button onclick="saveLayout()">Finish</div>
- 
+        <button onclick="saveLayout()">Finish</button>
 
-  </section>
-</article>
+    </section>
+  </article>
 
-    <script src="index.js"></script>
-  </body>
+  <script src="index.js"></script>
+</body>
+
 </html>
