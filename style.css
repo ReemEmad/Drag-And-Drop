@@ -80,7 +80,7 @@ div {
 .grid div {
   resize: both;
   overflow: hidden;
-  background-image: url("./addd.png");
+  background-image: url("./assets/addd.png");
   background-color: white;
   background-position: center;
   background-size: 50px 50px;
