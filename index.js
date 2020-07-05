@@ -21,7 +21,6 @@ function initGrid() {
 }
 
 function drag(ev) {
-  console.log(ev);
   ev.dataTransfer.setData("text", ev.target.id);
 }
 
@@ -33,7 +32,10 @@ function drop(ev) {
   ev.target.style.backgroundColor = "white";
   ev.preventDefault();
   var data = ev.dataTransfer.getData("text");
-  ev.target.appendChild(document.getElementById(data));
+  var nodeCopy = document.getElementById(data).cloneNode(true);
+  nodeCopy.id = "newId"; /* We cannot use the same ID */
+  ev.target.appendChild(nodeCopy);
+  // ev.target.appendChild(document.getElementById(data));
   // ev.dataTransfer.clearData();
 }
 function colorize(ev) {
@@ -76,7 +78,6 @@ function saveLayout() {
 
   divs.forEach((div) => {
     //Check if Image Exists
-    console.log(div.childNodes);
     if (div.childNodes.length == 1) {
       let img = div.childNodes[0];
       srcs.push(getBase64Image(img));
@@ -89,4 +90,14 @@ function saveLayout() {
   };
 
   localStorage.setItem("srcs", JSON.stringify(obj));
+}
+
+function resetLayout() {
+  let divs = document.querySelectorAll(".grid div");
+  divs.forEach((div) => {
+    if (div.childNodes[0]) {
+      div.removeChild(div.childNodes[0]);
+    }
+  });
+  localStorage.clear();
 }

@@ -40,8 +40,8 @@
 
     </section>
 
+    <div class="right">
     <section class="grid">
-      
       <div id="div21" ondragover="allowDrop(event)" ondrop="drop(event)" ondragenter="colorize(event)"
         ondragleave="decolorize(event)"></div>
       <div id="div22" ondragover="allowDrop(event)" ondrop="drop(event)" ondragenter="colorize(event)"
@@ -58,10 +58,13 @@
       ondragleave="decolorize(event)"></div>
       <div id="div26" ondragover="allowDrop(event)" ondrop="drop(event)" ondragenter="colorize(event)"
       ondragleave="decolorize(event)"></div>
-
-        <button onclick="saveLayout()">Finish</button>
-
     </section>
+          <div class="btns">
+            <button onclick="resetLayout()" style="background-color: brown;">Reset</button>
+            <button onclick="saveLayout()">Finish</button>
+  
+        </div>
+      </div>
   </article>
 
   <script src="index.js"></script>
