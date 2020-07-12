@@ -4,70 +4,48 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Drag And Drop</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gridstack@1.1.2/dist/gridstack.min.css" />
 <link rel="stylesheet" href="style.css">
-</link>
+
 </head>
 
 <body>
-  <header>
-    <nav class="nav">
-      <h1>Dashbang</h1>
-      <ul class="nav-ul">
-        <li>
-          <img src="assets/65390313_487231922044812_214369617403969536_n-640x559-1.jpg" id="pp"></img>
-        </li>
-        <li>
-          <h5>Taylor Swift</h5>
-        </li>
-      </ul>
-    </nav>
-  </header>
-
-  <article class="container">
-
-    <section class="draggable">
-      <div class="draggable__btn">
-        <p id="plus">+</p>
-        <p> New Widget</p>
-      </div>
-      <div id="div11" ondragstart="drag(event)" ondrop="drop(event)" ondragover="allowDrop(event)"><img src="assets/chart1.jpg"
-          draggable="true" ondragstart="drag(event)" id="p1"></img></div>
-      <div id="div12" ondrop="drop(event)" ondragover="allowDrop(event)"><img src="assets/chart2.png" draggable="true"
-          ondragstart="drag(event)" id="p2" /></div>
-      <div id="div13" ondrop="drop(event)" ondragover="allowDrop(event)"><img src="assets/chart3.png" draggable="true"
-          ondragstart="drag(event)" id="p3" /></div>
-
-
-    </section>
-
-    <div class="right">
-    <section class="grid">
-      <div id="div21" ondragover="allowDrop(event)" ondrop="drop(event)" ondragenter="colorize(event)"
-        ondragleave="decolorize(event)"></div>
-      <div id="div22" ondragover="allowDrop(event)" ondrop="drop(event)" ondragenter="colorize(event)"
-      ondragleave="decolorize(event)"></div>
-      <div id="div23" ondragover="allowDrop(event)" ondrop="drop(event)" ondragenter="colorize(event)"
-      ondragleave="decolorize(event)"></div>
-      <div id="div24" ondragover="allowDrop(event)" ondrop="drop(event)" ondragenter="colorize(event)"
-      ondragleave="decolorize(event)"></div>
-      <div id="div233" ondragover="allowDrop(event)" ondrop="drop(event)" ondragenter="colorize(event)"
-      ondragleave="decolorize(event)"></div>
-      <div id="div244" ondragover="allowDrop(event)" ondrop="drop(event)" ondragenter="colorize(event)"
-      ondragleave="decolorize(event)"></div>
-      <div id="div25" ondragover="allowDrop(event)" ondrop="drop(event)" ondragenter="colorize(event)"
-      ondragleave="decolorize(event)"></div>
-      <div id="div26" ondragover="allowDrop(event)" ondrop="drop(event)" ondragenter="colorize(event)"
-      ondragleave="decolorize(event)"></div>
-    </section>
-          <div class="btns">
-            <button onclick="resetLayout()" style="background-color: brown;">Reset</button>
-            <button onclick="saveLayout()">Finish</button>
+  <div class="grid-stack">
+    <div
+      class="grid-stack-item"
+      data-gs-x="0"
+      data-gs-y="0"
+      data-gs-width="4"
+      data-gs-height="2"
+    >
+      <div class="grid-stack-item-content">my first widget</div>
+    </div>
+    <div
+      class="grid-stack-item"
+      data-gs-x="4"
+      data-gs-y="0"
+      data-gs-width="4"
+      data-gs-height="4"
+    >
+      <div class="grid-stack-item-content">another widget!</div>
+    </div>
   
+    <div class="grid-stack-item"
+    data-gs-x="4"
+    data-gs-y="0"
+    data-gs-width="4"
+    data-gs-height="4">
+    <div class="grid-stack-item-content">
+          <canvas  id="myChart"></canvas> 
         </div>
       </div>
-  </article>
+  </div>
 
+   
+ 
+  <script src="https://cdn.jsdelivr.net/npm/gridstack@1.1.2/dist/gridstack.all.js"></script>
+  <script src="/node_modules/chart.js/dist/Chart.js"></script>
   <script src="index.js"></script>
+  
 </body>
-
 </html>

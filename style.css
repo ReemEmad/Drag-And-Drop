@@ -8,22 +8,29 @@ html,
 body {
   min-height: 100%;
   width: 100%;
-  background-color: #f0f0f0;
+  margin: 0;
+  background-color: #db1a1a;
 }
-.container {
-  display: flex;
-  /* justify-content: center; */
+.grid-stack-item {
+  background-color: white;
+  margin: 10px;
+  border: 2px solid yellow;
+}
+#myChart {
   width: 100%;
-  min-height: 100%;
-}
-div {
-  /* min-width: 205px;
-  min-height: 120px; */
-  border: 1.5px dashed rgb(46, 46, 46);
-  /* padding: 10px; */
+  height: 100%;
 }
 
-.btns {
+/* .container {
+  display: flex;
+  width: 100%;
+  min-height: 100%;
+} */
+/* div {
+  border: 1.5px dashed rgb(46, 46, 46);
+} */
+
+/* .btns {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -45,9 +52,9 @@ div {
 .draggable div {
   border-radius: 5px;
   margin-bottom: 30px;
-}
+} */
 
-.draggable__btn {
+/* .draggable__btn {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -55,29 +62,23 @@ div {
   font-weight: bold;
   font-size: 15px;
   width: 225px;
-  padding: 10px 15px;
-}
+  padding: 10px 15px; */
+/* } */
 
-#plus {
+/* #plus {
   font-size: 22px;
   margin-right: 5px;
-}
-.grid {
+} */
+/* .grid {
   padding-top: 20px;
   display: flex;
   justify-content: center;
-  /* flex: 4; */
-  /* flex-basis: auto; */
   align-items: center;
   background-color: #f0f0f0;
-  /* width: 100vw; */
-  /* height: 100vh; */
-  flex-wrap: wrap;
-  /* flex-basis: 83%; */
-  /* padding-left: 50px; */
-}
+  flex-wrap: wrap; 
+} */
 
-.grid div {
+/* .grid div {
   resize: both;
   overflow: hidden;
   background-image: url("./assets/addd.png");
@@ -87,20 +88,18 @@ div {
   margin: 5px;
   border-radius: 5px;
   background-repeat: no-repeat;
-  /* margin-bottom: 10px; */
-}
+} */
 
-img {
+/* img {
   width: 225px;
   height: 148px;
 }
 .grid img {
   width: 100%;
   height: 100%;
-  /* margin: 0 20px 0; */
-}
+} */
 
-.nav {
+/* .nav {
   padding: 1.5em;
   background-color: rgb(59, 59, 59);
   color: aliceblue;
@@ -109,11 +108,11 @@ img {
   align-items: center;
   display: flex;
   justify-content: space-between;
-}
+} */
 /* h1{
   display: flex
 } */
-.nav-ul {
+/* .nav-ul {
   display: flex;
   align-items: center;
   list-style-type: none;
@@ -163,3 +162,7 @@ button {
   min-width: 205px;
   min-height: 305px;
 }
+.chartjs-render-monitor {
+  height: 400px;
+  width: 400px;
+} */
